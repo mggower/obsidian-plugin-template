@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    /* Base Options */
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "moduleResolution": "bundler",
+
+    /* Interop & resolution */
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+
+    /* Strictness */
+    "strict": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* Obsidian/Electron Specifics */
+    // Obsidian plugins run in Electron, so you need Node types (fs, path) AND DOM types (window, document)
+    "types": ["node"],
+
+    /* Build Output */
+    // We rely on Vite to emit files, so tsconfig just handles type checking
+    "noEmit": true,
+    "isolatedModules": true
+  },
+  "include": ["src/**/*.ts", "vite.config.ts", "prettier.config.mjs", "eslint.config.mjs"],
+  "exclude": ["node_modules", "dist", "test"]
+}
